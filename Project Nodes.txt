@@ -1,0 +1,47 @@
+project API's
+>>/users
+>>/users/:id
+
+Notes:-
+>> at very start type npm init
+>>type npm i express 
+>> type npm i nodemon -save-anyname
+>>change the script in package.json
+
+
+/user API:-
+>> create a basic server 
+
+>>for storing a datas in database, create a data folder and create file in that(users.json and books.json)
+>>gave details about the users in user.json page
+>>import the data folder in main page (index.js) by using const {users}=require("./data/users.json")
+
+ >>run the code in thunder client and save the url in collections as users,
+  it helps you to run url easily on next time.
+
+
+HOW TO IMPORT AND EXPORT THE file?
+
+>>first import the router file name in index.js which is called as main file
+        const userRouter=require("./routes/users.js")
+        const bookRouter=require("./routes/books.js")
+
+>>next you need to redirect the file which mean use the app like [app.use(express.json())]
+        app.use("/users",userRouter)
+        app.use("/books",booksRouter)
+
+>>next you import the express and user.json file in "user.js" file
+
+>>next you initialize the router like  [const app=express()]
+        const router=express.Router()
+
+>>next start your API coding 
+        notes:-change the app to router because you changed your file
+
+>> next you need to export the router in users.js file
+        module.exports=router
+
+>>next remove all "/users" in user.js because index.js is a base file it have "/users" in redirect 
+but keep "/" in users.js 
+
+
